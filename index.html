@@ -47,23 +47,23 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RestGPT: Connecting Large Language Models with RESTful APIs</h1>
+          <h1 class="title is-1 publication-title">RestGPT: Connecting Large Language Models with Real-World Applications via RESTful APIs</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://pku-tangent.github.io/">Yifan Song</a><sup>1</sup>,</span>
+              <a href="https://github.com/Yifan-Song793">Yifan Song</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://pku-tangent.github.io/">Weimin Xiong</a><sup>1</sup>,</span>
+              <a href="https://github.com/WeiminXiong">Weimin Xiong</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://pku-tangent.github.io/">Dawei Zhu</a><sup>1</sup>,
+              <a href="https://github.com/zdwls">Dawei Zhu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://pku-tangent.github.io/">Cheng Li</a><sup>2</sup>,
+              Cheng Li<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://pku-tangent.github.io/">Ke Wang</a><sup>2</sup>,
+              Ke Wang<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://pku-tangent.github.io/">Ye Tian</a><sup>2</sup>,
+              Ye Tian<sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://pku-tangent.github.io/">Sujian Li</a><sup>1</sup>
@@ -97,7 +97,7 @@
                 </a>
               </span>
               <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://pku-tangent.github.io/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -105,7 +105,7 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span> -->
               <!-- Twitter Link. -->
               <span class="link-block">
                 <a href="https://twitter.com/"
@@ -128,7 +128,8 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        RestGPT is a large language model based framework that connects large language models with RESTful APIs to tackle complex user queries.
+        <!-- RestGPT is a framework that connects large language models with real-world applications via RESTful APIs to automatically tackle complex user queries.  -->
+        The code and demo will be released soon.
       </h2>
     </div>
   </div>
@@ -136,18 +137,15 @@
 
 
 
-<section class="section">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          Tool-augmented large language models (LLMs) have achieved remarkable progress in tackling a broad range of queries.
-          However, existing work are still in the experimental stage and has limitations in extensibility and robustness, especially facing the real-world applications.
-          In this paper, we consider a more realistic scenario, connecting LLMs with RESTful APIs, which use the commonly adopted REST software architectural style for web service development.
-          To address the practical challenges of planning and API usage, we introduce RestGPT, which leverages LLMs to solve user requests by connecting with RESTful APIs.
-          Specifically, we propose a coarse-to-fine online planning mechanism to enhance the ability of planning and API selection.
+          <b>RestGPT</b> is a framework that can connect large language models with <b>real-world applications</b>, such as music player and movie information database, via RESTful APIs to <b>automatically</b> tackle complex user queries.
+          To address the practical challenges of planning and API usage, we propose a coarse-to-fine online planning mechanism to enhance the ability of planning and API selection.
           For the complex scenario of calling RESTful APIs, we also specially designed an API executor to formulate parameters and parse API responses.
           Experiments show that RestGPT is able to achieve impressive results in complex tasks and has strong robustness, which paves a new way towards AGI.
         </div>
@@ -158,6 +156,76 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <img id="model" width="100%" src="static/images/model.png">
+      </div>
+    </div>
+    <!--/ Method -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- RESTful APIs -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">RESTful APIs</h2>
+        <div class="content has-text-justified">
+          RESTful APIs have become a popular way to expose functionalities and data of web services to client applications. 
+          There are also millions of RESTful APIs available on Internet, such as Spotify, Twitter, Gmail, etc.
+          RESTful APIs usually follow OpenAPI Specification (OAS), which describes the operations, parameters, and response schemas of each API endpoint.
+        </div>
+      </div>
+    </div>
+    <!--/ RESTful APIs -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">RestGPT</h2>
+        <div class="content has-text-justified">
+          RestGPT consists of three main components: a Planner, an API Selector, and an Executor, the core of each component is prompting an LLM.
+          Unlike previous work that generates static plans which are not adaptable to environment feedback, RestGPT employs a coarse-to-fine online planning framework.
+          Specifically, the planner decomposes user instructions into sub-tasks in the format of natural language, which are then mapped to API calls by the API selector, forming a coarse-to-fine task planning.
+          On the other hand, the planner performs online planning of subsequent sub-tasks based on the executor's response.
+          To execute RESTful API calls, we further divided the Executor into two modules: a Caller and a response Parser. 
+          The caller reads the complete API documentation to organize the API call parameters while the parser generates Python code that parses responses based on the response schema defined in OAS. 
+        </div>
+      </div>
+    </div>
+    <!--/ Method -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Examples -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Examples</h2>
+        <div class="content has-text-justified">
+        <img id="model" width="100%" src="static/images/case1.png">
+        <img id="model" width="100%" src="static/images/case3.png">
+        <img id="model" width="100%" src="static/images/case2.png">
+        <img id="model" width="100%" src="static/images/case4.png">
+      </div>
+    </div>
+    <!--/ Examples -->
+
+  </div>
+</section>
 
 
 <section class="section" id="BibTeX">

@@ -47,7 +47,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RestGPT: Connecting Large Language Models with Real-World Applications via RESTful APIs</h1>
+          <h1 class="title is-1 publication-title">RestGPT: Connecting Large Language Models with Real-World RESTful APIs</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://github.com/Yifan-Song793">Yifan Song</a><sup>1</sup>,</span>
@@ -57,10 +57,25 @@
               <a href="https://github.com/zdwls">Dawei Zhu</a><sup>1</sup>,
             </span>
             <span class="author-block">
+              Wenhao Zhu<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Han Qian<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Mingbo Song<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Hailiang Huang<sup>1</sup>,
+            </span>
+            <span class="author-block">
               Cheng Li<sup>2</sup>,
             </span>
             <span class="author-block">
               Ke Wang<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Rong Yao<sup>2</sup>,
             </span>
             <span class="author-block">
               Ye Tian<sup>2</sup>,
@@ -97,15 +112,15 @@
                 </a>
               </span>
               <!-- Code Link. -->
-              <!-- <span class="link-block">
-                <a href="https://pku-tangent.github.io/"
+              <span class="link-block">
+                <a href="https://github.com/Yifan-Song793/RestGPT"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
-              </span> -->
+              </span>
               <!-- Twitter Link. -->
               <span class="link-block">
                 <a href="https://twitter.com/99Solaris/status/1668442799879127040?s=20"
@@ -129,12 +144,16 @@
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
         <!-- RestGPT is a framework that connects large language models with real-world applications via RESTful APIs to automatically tackle complex user queries.  -->
-        The code and demo will be released soon.
+        The code is released in <a href="https://github.com/Yifan-Song793/RestGPT">https://github.com/Yifan-Song793/RestGPT</a>.
       </h2>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <img id="model" width="100%" src="static/images/intro.png">
+      </div>
     </div>
   </div>
 </section>
-
 
 
 <section class="section hero is-light">
@@ -144,10 +163,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <b>RestGPT</b> is a framework that can connect large language models with <b>real-world applications</b>, such as music player and movie information database, via RESTful APIs to <b>automatically</b> tackle complex user queries.
-          To address the practical challenges of planning and API usage, we propose a coarse-to-fine online planning mechanism to enhance the ability of planning and API selection.
-          For the complex scenario of calling RESTful APIs, we also specially designed an API executor to formulate parameters and parse API responses.
-          Experiments show that RestGPT is able to achieve impressive results in complex tasks and has strong robustness, which paves a new way towards AGI.
+          This work aims to construct <b>a large language model based autonomous agent, RestGPT, to control real-world applications</b>, such as movie database and music player. To achieve this, we connect LLMs with <b>RESTful APIs</b> and tackle the practical challenges of planning, API calling, and response parsing. To fully evaluate the performance of RestGPT, we propose RestBench, a high-quality test set which consists of two real-world scenarios and human-annotated instructions with gold solution paths.
         </div>
       </div>
     </div>
@@ -216,7 +232,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Examples</h2>
         <div class="content has-text-justified">
-        <img id="model" width="100%" src="static/images/case1.png">
+        <img id="model" width="100%" src="static/images/example.gif">
         <img id="model" width="100%" src="static/images/case3.png">
         <img id="model" width="100%" src="static/images/case2.png">
         <img id="model" width="100%" src="static/images/case4.png">
@@ -231,11 +247,13 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{song2023restgpt,
-  author    = {Yifan Song and Weimin Xiong and Dawei Zhu and Cheng Li and Ke Wang and Ye Tian and Sujian Li},
-  title     = {RestGPT: Connecting Large Language Models with Real-World Applications via RESTful APIs},
-  journal   = {arXiv preprint arXiv:2306.06624},
-  year      = {2023},
+    <pre><code>@misc{song2023restgpt,
+      title={RestGPT: Connecting Large Language Models with Real-World RESTful APIs}, 
+      author={Yifan Song and Weimin Xiong and Dawei Zhu and Wenhao Wu and Han Qian and Mingbo Song and Hailiang Huang and Cheng Li and Ke Wang and Rong Yao and Ye Tian and Sujian Li},
+      year={2023},
+      eprint={2306.06624},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }</code></pre>
   </div>
 </section>
@@ -245,10 +263,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/pdf/RestGPT.pdf">
+         href="https://arxiv.org/abs/2306.06624">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://restgpt.github.io/" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/Yifan-Song793/RestGPT" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
